@@ -1,0 +1,4 @@
+echo "$FT_NBR1 + $FT_NBR2" \
+| tr "'\\\"?!mrdoc" "0123456789" \
+| bc \
+| awk 'function to_custom(n, b, a, r) { while (n) { r = substr(a, (n % b) + 1, 1) r; n = int(n / b) } return r } { print to_custom($1, 13, "gtaio luSnemf") }'
