@@ -5,6 +5,9 @@ int ft_atoi(char *str)
    int	neg;
    int	i;
 
+
+   res = 0;
+   i = 0;
    neg = 1;
    while (str[i] != '\0')
    {
@@ -14,18 +17,20 @@ int ft_atoi(char *str)
 	}
 	if (str[i] >= '0' && str[i] <= '9')
 	{
-		res	= res * 10 + (str[i] - '0');
-		if (!(str[i + 1] >= '0' && str[i + 1] <= '9'))
+		while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
 		{
-			return (res * neg); 
+			res = res * 10 + str[i] - '0';
+			i++;
 		}
 	}
 	i++;
    }
+   	printf("%d",res * neg);
+	return (res * neg);
 }
 
-// int main(void)
-// {
-// 	char tes[] = "--1231151516";
-// 	ft_atoi(tes);
-// }
+int main(void)
+{
+	char tes[] = "----11231";
+	ft_atoi(tes);
+}

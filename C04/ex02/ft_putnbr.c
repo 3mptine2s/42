@@ -9,7 +9,7 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	if (nb == -2147483648) // INT_MIN special case
+	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
 		return;

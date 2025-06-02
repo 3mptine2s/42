@@ -64,9 +64,9 @@ void	ft_putnbr_base(int nbr, char *base)
 	wrte(base[nb % len]);
 }
 
-int main()
+int main(void)
 {
-	int hi = 300;
-	char base[] = "01";
+	int hi = 3041230;
+	char base[] = "0123456789abcdef";
 	ft_putnbr_base(hi,base);
 }
