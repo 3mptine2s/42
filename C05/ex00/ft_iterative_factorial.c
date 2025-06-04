@@ -17,8 +17,8 @@ int ft_iterative_factorial(int nb)
     return (nb);
 }
 
-int main()
-{
-	int h = 23;
-	ft_iterative_factorial(23);
-}
+// int main(void)
+// {
+// 	int h = 23;
+// 	ft_iterative_factorial(23);
+// }

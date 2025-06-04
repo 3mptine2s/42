@@ -10,12 +10,12 @@ int factorial(int n)
 	{
         return 1;
 	}   
-    return (n * factorial(n - 1));  
+    return (n * factorial(n - 1));
 }
 
-int main()
-{
-    int num = 3;
-    int result = factorial(num);
-	printf("%d",result);
-}
+// int main()
+// {
+//     int num = 7;
+//     int result = factorial(num);
+// 	printf("%d",result);
+// }

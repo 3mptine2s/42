@@ -20,8 +20,8 @@ int ft_iterative_power(int nb, int power)
 	return (res);
 }
 
-int main()
-{
-    int hi = 3;
-    printf("%d",ft_iterative_power(hi,2));
-}
+// int main(void)
+// {
+//     int hi = 3;
+//     printf("%d",ft_iterative_power(hi,2));
+// }
