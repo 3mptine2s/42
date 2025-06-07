@@ -1,1 +1,1 @@
-find -type f -name "*sh"
+find -type f -not -name "*sh"

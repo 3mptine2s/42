@@ -1,41 +1,40 @@
-int	getlen(char *tab)
+unsigned int strlen(char *tab)
 {
-	int	i;
+    unsigned int	i;
 
+	i = 0;
 	while (tab[i] != '\0')
 	{
 		i++;
 	}
-	return (i++);
+	return (i);
 }
 unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned	int	dest_len;
-	unsigned	int	src_len;
-	unsigned	int	i;
-	unsigned	int	j;
+	unsigned int    i;
+	unsigned int	dest_size;
+	unsigned int	src_size;
 
-	dest	=	getlen(dest);
-	src		=	getlen(src);
-	j		=	0;
-	i		=	0;
-	if (size <= dest_len)
-	return (size + src_len);
-
-	i = dest_len;
-	while (src[j] != '\0' && i + 1 < size)
+	dest_size = strlen(dest);
+    src_size = strlen(src);
+	i = 0;
+	if (size <= dest_size)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		return (src_size + dest_size);
 	}
-	dest[i] = '\0';
-	return (dest_len + src_len);
+	while (dest_size + i  <= size - 1 && src[i] != '\0')
+	{
+		dest[dest_size + i] = src[i];
+		i++;
+	}
+    dest[dest_size + i] = '\0';
+	return (src_size + dest_size);
 }
 
-// int	main()
-// {
-// 	char	src[] = "shellea";
-// 	char	dest[] = "imdestototo";
-// 	ft_strlcat(dest,src,5);
-// }
+int main()
+{
+    char src[] = "test1";
+    char dest[] = "test2";
+
+    ft_strlcat(dest,src,4);
+}
