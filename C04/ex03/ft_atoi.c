@@ -13,7 +13,7 @@ int ft_atoi(char *str)
    {
 	if (str[i] == '-')
 	{
-		neg = neg * -1;
+		neg = -neg;
 	}
 	if (str[i] >= '0' && str[i] <= '9')
 	{
@@ -25,12 +25,13 @@ int ft_atoi(char *str)
 	}
 	i++;
    }
-   	printf("%d",res * neg);
 	return (res * neg);
 }
 
+#include <stdio.h>
+
 int main(void)
 {
-	char tes[] = "----11231";
-	ft_atoi(tes);
+	char tes[] = "!@#$++^&qw-ertyuio--p[]sdfghkl;'zxcvbnm,.\n\t/*(  )-1325632167";
+	printf("%d",ft_atoi(tes));
 }

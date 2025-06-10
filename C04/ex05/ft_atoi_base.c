@@ -1,31 +1,67 @@
 #include <stdio.h>
-int ft_atoi(char *str)
-{
-   int	res;
-   int	neg;
-   int	i;
 
-   neg = 1;
-   while (str[i] != '\0')
-   {
-	if (str[i] == '-')
+int	putlen(char *tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
 	{
-		neg = neg * -1;
+		i++;
 	}
-	if (str[i] >= '0' && str[i] <= '9')
-	{
-		res	= res * 10 + (str[i] - '0');
-		if (!(str[i + 1] >= '0' && str[i + 1] <= '9'))
-		{
-			return (res * neg); 
-		}
-	}
-	i++;
-   }
+	return (i);
 }
 
-// int main(void)
-// {
-// 	char tes[] = "--1231151516";
-// 	ft_atoi(tes);
-// }
+int ft_iterative_power(int nb, int power)
+{
+    int	res;
+
+	res = nb;
+	if (power == 0)
+	{
+		return (1);
+	}
+	if (power < 0)
+	{
+		return (0);
+	}
+	while (power > 1)
+	{
+		res = res * nb;
+		power--;
+	}
+	return (res);
+}
+
+int strfind(char c, char *tab)
+{
+	int i;
+	while (tab[i] && c != tab[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+int ft_atoi_base(char *str, char *base)
+{
+	int numlen;
+	int baselen;
+	int	res;
+	int	i;
+
+	res = 0;
+	baselen = putlen(base);
+	numlen = putlen(str);
+	while (i < numlen)
+	{
+		res += strfind(str[i], base) * (ft_iterative_power(baselen, i));
+		i++;
+	}
+	printf("%d", res);
+}
+
+int main()
+{
+	ft_atoi_base("15","0123456789");
+}
